@@ -1,0 +1,105 @@
+#+TITLE: org-reading
+#+OPTIONS: num:nil toc:nil
+#+INCLUDE: ../pages/_header.html html
+
+* README
+
+Use [[http://orgmode.org][org-mode]] to keep track of your reading. Org-reading pulls the
+appropriate metadata of book that you are interested in reading, are
+reading, or have read. This automatically fills in the correct
+information like the categories, authors and ISBN numbers so you don't
+have to pull them out. It's a great way to keep track of what you have
+read and have a reading database on your own personal computer using
+Emacs and org-mode.
+
+/The code a work in progress and is constantly improving based on my
+needs./
+
+* Usage
+
+  - =org-reading-new-book-from-title=
+  - =org-reading-new-book-from-isbn=
+  - =org-reading-new-books-from-region=
+  - =org-reading-start-book=
+  - =org-reading-finish-book=
+
+* Program
+** [[file:org-reading.el][org-reading.el]]
+#+INCLUDE: org-reading.el src elisp
+
+* Todos
+
+  There is still a lot I'd like to do with this script. Lots of
+  [[http://quantifiedself.com/][Quantified Self]] type stuff can be done. I want to get to that
+  point. Right now I have some humble code. Once enough of these
+  features have been fixed I will throw it on Github or send it off to
+  org-mode if they want to add it to contrib. Right now its my
+  personal hack which doesn't have a lot of design considerations in
+  mind.
+
+** TODO New Book
+
+   - [ ] Make importing from region more robust
+   - [ ] Prompt for correct book if uncertainty about which result is the correct book
+   - [ ] org-reading-start-book should change the state to STARTED automatically
+   - [ ] org-reading-finish-book should have a trigger of some kind to export books?
+   - [ ] When away from the reading file append to correct heading.
+   - [ ] Make it a capture event
+   - [ ] Include a link to books from Amazon
+
+** TODO Start / Finish Book
+   - [ ] Sync with Goodreads
+   - [ ] When finished don't have the change of state. Just have it be marked as done.
+** TODO Find a book
+  - [ ] use org-sparse-tree
+  - [ ] Look for a book with a title
+
+** TODO Quantify Reading
+
+  - [ ] On average how much do I read?
+  - [ ] What type of books do I read?
+  - [ ] Yearly graph of the type of books.
+  - [ ] How long before I read something from when I add it to the list?
+
+** TODO Choose Next Book
+
+   - [ ] Find a book that you might want to read.
+   - [ ] Based on what you read recently come up with the next book that should be read.
+
+** TODO Import / Export
+
+   - [ ] Amazon
+   - [ ] Goodreads
+     - [ ] Send the review that was written to Goodreads.
+     - [ ] Pull all the books that I have in Goodreads locally
+     - [ ] Update local ratings with Goodread ratings
+   - [ ] Google Books
+
+*** Goodreads
+
+On finish trigger an update which will get the goodreads book_id and
+publish a review.
+
+Have to login to Goodreads and authorize with OAuth.
+
+**** Get the Goodreads book ID given an ISBN
+Get the Goodreads book ID given an ISBN. Response contains the ID without any markup.
+URL: http://www.goodreads.com/book/isbn_to_id    (sample url)
+HTTP method: GET
+Parameters:
+key: Developer key (required).
+isbn: The ISBN of the book to lookup.
+
+**** Add review
+
+Add book reviews for members using OAuth. You'll need to register your app (required).
+URL: http://www.goodreads.com/review.xml
+HTTP method: POST
+Parameters:
+book_id: Goodreads book_id (required)
+review[review]: Text of the review (optional)
+review[rating]: Rating (0-5) (optional, default is 0 (No rating))
+review[read_at]: Date (YYYY-MM-DD format, e.g. 2008-02-01) (optional)
+shelf: read|currently-reading|to-read|<USER SHELF NAME> (optional, must exist, see: shelves.list)
+
+****
