@@ -1,8 +1,4 @@
-#+TITLE: org-reading
-#+OPTIONS: num:nil toc:nil
-#+INCLUDE: ../pages/_header.html html
-
-* README
+org-reading -
 
 Use [[http://orgmode.org][org-mode]] to keep track of your reading. Org-reading pulls the
 appropriate metadata of book that you are interested in reading, are
@@ -12,7 +8,7 @@ have to pull them out. It's a great way to keep track of what you have
 read and have a reading database on your own personal computer using
 Emacs and org-mode.
 
-/The code a work in progress and is constantly improving based on my
+/Note: The code a work in progress and is constantly improving based on my
 needs./
 
 * Usage
@@ -22,10 +18,6 @@ needs./
   - =org-reading-new-books-from-region=
   - =org-reading-start-book=
   - =org-reading-finish-book=
-
-* Program
-** [[file:org-reading.el][org-reading.el]]
-#+INCLUDE: org-reading.el src elisp
 
 * Todos
 
@@ -103,3 +95,5 @@ review[read_at]: Date (YYYY-MM-DD format, e.g. 2008-02-01) (optional)
 shelf: read|currently-reading|to-read|<USER SHELF NAME> (optional, must exist, see: shelves.list)
 
 ****
+
+* LICENSE
