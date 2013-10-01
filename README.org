@@ -1,12 +1,10 @@
-org-reading -
+* org-reading - Use [[http://orgmode.org][org-mode]] to keep track of your reading.
 
-Use [[http://orgmode.org][org-mode]] to keep track of your reading. Org-reading pulls the
-appropriate metadata of book that you are interested in reading, are
-reading, or have read. This automatically fills in the correct
-information like the categories, authors and ISBN numbers so you don't
-have to pull them out. It's a great way to keep track of what you have
-read and have a reading database on your own personal computer using
-Emacs and org-mode.
+
+Org-reading pulls the appropriate metadata of book that you are
+interested in reading, are reading, or have read. It gathers the
+appropriate information like the categories, authors and ISBN number
+so you don't have to insert them manually.
 
 /Note: The code a work in progress and is constantly improving based on my
 needs./
@@ -19,7 +17,7 @@ needs./
   - =org-reading-start-book=
   - =org-reading-finish-book=
 
-* Todos
+* Issues
 
   There is still a lot I'd like to do with this script. Lots of
   [[http://quantifiedself.com/][Quantified Self]] type stuff can be done. I want to get to that
@@ -97,3 +95,23 @@ shelf: read|currently-reading|to-read|<USER SHELF NAME> (optional, must exist, s
 ****
 
 * LICENSE
+
+Copyright (c) 2013 Kesava Abhinav Yerra
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
